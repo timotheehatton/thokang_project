@@ -158,12 +158,14 @@
       color: #fff;
       display: block;
       font-size: 18px;
+      font-family: 'Lora', serif;
       &--sub {
         margin-top: 10px;
         display: block;
         font-size: 36px;
         color: $red;
         text-transform: uppercase;
+        font-family: 'Fjalla One', sans-serif;
       }
     }
   }
