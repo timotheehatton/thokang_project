@@ -3,7 +3,18 @@
     background-image: url(../../assets/img/menu_chapter1.jpg); 
   }
   .scene2 {
-    background-color: yellow;
+    background-color: #191919;
+    &--center {
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      transform: translate(-50%, 0%);
+      height: 70%;
+      &--svg {
+        height: 100%;
+        width: auto;
+      }
+    }
   }
   .scene3 {
     background-color: green;
