@@ -1,5 +1,5 @@
 var dom = {}
-    dom.body                = document.querySelector('body')
+    dom.body = document.querySelector('body')
 
 //chapter page
 if (dom.body.querySelector('.scene')) {
@@ -105,6 +105,8 @@ if (dom.body.querySelector('.scene')) {
     }, 300)
     e.preventDefault();
   })
+
+  //scroll control Lethargy
 }
 
 //home page
@@ -133,3 +135,22 @@ function sound(src){
 }
 
 //sound('../assets/sounds/test1.mp3')
+
+//ajax transition
+$(document).ready(function()
+{
+  $(".ajax--btn").on("click", function()
+  {
+    var urlPageName = $(this).attr("href");
+    $.ajax({
+        type: "GET",
+        url: "./" + urlPageName,
+        processData: false,
+        crossDomain: true,
+        cache: true,
+        success: function (result, responseData) { $("body").html(result); },
+        error: function (responseData, textStatus, errorThrown) { alert('AJAX failed'); },
+    });
+    return false;
+  });
+});
