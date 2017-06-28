@@ -1,0 +1,77 @@
+.mainHeader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  &--center {
+    margin-top: -60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    &--img {
+      width: 85px;
+    }
+    &--subtitle {
+      font-size: 24px;
+      color: #FFFFFF;
+      display: block;
+      margin-top: 15px;
+    }
+    &--title {
+      font-size: 72px;
+      color: $red;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 20px;
+      &::after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 100px;
+        background: #FFFFFF;
+        margin: 10px auto;
+      }
+    }
+    &--description {
+      display: block;
+      margin-top: 30px;
+      font-size: 18px;
+      color: #FFFFFF;
+      letter-spacing: 0.45px;
+    }
+    &--btn {
+      display: inline-block;
+      margin-top: 20px;
+      border: 1px solid black;
+    }
+  }
+  &--scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+    &--txt {
+      color: #fff;
+      font-size: 18px;
+      letter-spacing: 0.45px;
+      &::after {
+        background-color: #fff;
+        content: '';
+        display: block;
+        width: 3px;
+        height: 70px;
+        margin-top: 10px;
+        margin: 10px auto 0 auto;
+      }
+    }
+  }
+}

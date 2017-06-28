@@ -1,0 +1,36 @@
+@import 'var';
+@import 'fonts';
+@import 'reset';
+
+//partials
+@import 'partials/navBar.scss';
+
+//chapters
+@import 'pages/home.scss';
+@import 'pages/chapter1.scss';
+@import 'pages/chapter2.scss';
+@import 'pages/chapter3.scss';
+@import 'pages/chapter4.scss';
+@import 'pages/chapter5.scss';
+@import 'pages/chapter6.scss';
+
+body {
+  position: relative;
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.chapter {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.scene {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: grey;
+}
