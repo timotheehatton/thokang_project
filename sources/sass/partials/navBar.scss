@@ -36,7 +36,9 @@
         left: 0;
         background-color: $red;
         transform-origin: left;
-        transform: scaleX(.5);
+        transform: scaleX(0);
+        transition-duration: .3s;
+        transition-property: transform;
       }
     }
     &--link {
@@ -76,5 +78,93 @@
   }
   &--sound {
     margin-right: 50px;
+  }
+}
+
+.popin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 0;
+  display: none;
+  background-color: #000;
+  transition-duration: .3s;
+  transition-property: opacity;
+  &--active {
+    opacity: 1;
+  }
+  &--close {
+    color: #fff;
+    font-size: 25px;
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    padding: 10px;
+    z-index: 1000;
+    &--title {
+      font-size: 14px;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      margin-left: 15px;
+      position: relative;
+      top: -2px;
+    }
+  }
+  &--item {
+    width: 20%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 40% 50%;
+    background-color: #000;
+    transition-duration: .5s;
+    transition-property: background;
+    &:nth-child(-n+5) {
+      border-right: 1px solid #1b1a1a;
+    }
+    &:nth-child(2):hover {
+      background-image: url('../../assets/img/menu_chapter1.jpg');
+      background-position: 50% 50%;
+    }
+    &:nth-child(3):hover {
+      background-image: url('../../assets/img/menu_chapter2.jpg');
+      background-position: 50% 50%;
+    }
+    &:nth-child(4):hover {
+      background-image: url('../../assets/img/menu_chapter3.jpg');
+      background-position: 50% 50%;
+    }
+    &:nth-child(5):hover {
+      background-image: url('../../assets/img/menu_chapter4.jpg');
+      background-position: 50% 50%;
+    }
+    &:nth-child(6):hover {
+      background-image: url('../../assets/img/menu_chapter5.jpg');
+      background-position: 50% 50%;
+    }
+    &--title {
+      color: #fff;
+      display: block;
+      font-size: 18px;
+      &--sub {
+        margin-top: 10px;
+        display: block;
+        font-size: 36px;
+        color: $red;
+        text-transform: uppercase;
+      }
+    }
   }
 }
