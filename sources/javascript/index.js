@@ -11,6 +11,10 @@ if (dom.body.querySelector('.scene')) {
   dom.menu_popin          = dom.body.querySelector('.popin')
 
   //next scene function
+  if (localStorage.getItem('current_chapter') == null) {
+    localStorage.setItem('current_chapter', '1')
+  }
+  var current_chapter = localStorage.getItem('current_chapter');
   var current_scene = 0
 
   var next_scene = ()=>
@@ -30,12 +34,27 @@ if (dom.body.querySelector('.scene')) {
         }, 300)
       }, 10)
     }
+    else if (current_chapter < 5)
+    {
+      current_chapter++
+      localStorage.setItem('current_chapter', current_chapter)
+      $.ajax({
+          type: "GET",
+          url: "./chapters/chapter" + current_chapter + ".html",
+          processData: false,
+          crossDomain: true,
+          cache: true,
+          success: function (result, responseData) { $("body").html(result); },
+          error: function (responseData, textStatus, errorThrown) { alert('AJAX failed'); },
+      });
+    }
   }
 
   //previous scene function
   var previous_scene = ()=>
   {
-    if (current_scene > 0) {
+    if (current_scene > 0)
+    {
       dom.scene[current_scene].classList.remove('scene--active')
       dom.timeline_point[current_scene].classList.remove('nav--timeline--link--active')
       current_scene--
@@ -48,6 +67,20 @@ if (dom.body.querySelector('.scene')) {
           dom.scene[current_scene + 1].style.display = "none"
         }, 300)
       }, 10)
+    }
+    else if (current_chapter > 1)
+    {
+      current_chapter--
+      localStorage.setItem('current_chapter', current_chapter)
+      $.ajax({
+          type: "GET",
+          url: "./chapters/chapter" + current_chapter + ".html",
+          processData: false,
+          crossDomain: true,
+          cache: true,
+          success: function (result, responseData) { $("body").html(result); },
+          error: function (responseData, textStatus, errorThrown) { alert('AJAX failed'); },
+      });
     }
   }
 
@@ -134,13 +167,15 @@ function sound(src){
   sound.autoplay = true;
 }
 
-//sound('../assets/sounds/test1.mp3')
-
 //ajax transition
 $(document).ready(function()
 {
+  $(".ajax--btn").mouseover(function(){
+    sound('../assets/sounds/gun_reload.mp3');
+  });
   $(".ajax--btn").on("click", function()
   {
+    sound('../assets/sounds/gun_shot.mp3');
     var urlPageName = $(this).attr("href");
     $.ajax({
         type: "GET",
