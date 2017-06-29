@@ -107,6 +107,7 @@
     left: 40px;
     padding: 10px;
     z-index: 1000;
+    font-family: $title;
     &--title {
       font-size: 14px;
       text-transform: uppercase;
@@ -114,7 +115,7 @@
       display: inline-block;
       margin-left: 15px;
       position: relative;
-      top: -2px;
+      top: -4px;
     }
   }
   &--item {

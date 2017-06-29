@@ -74,22 +74,40 @@
       bottom: 10%;
       border-radius: 2px;
       padding: 40px 50px;
-      width: 75%;
+      width: 68%;
       font-family: $title;
       &--categories {
         color: $transparent-white;
-        &--category.active {
-          color: $red;
-          transform: translateX(-5px);
-        }
         &--category {
-          margin-bottom: 20px;
-          transition: all 0.15s ease-in-out;
-        }
-        &--category:hover {
+          img, p {
+            display: none;
+          }
+          &--title {
+            margin-bottom: 20px;
+            transition: all 0.15s ease-in-out;
+          }
+          &--img {
+            position: absolute;
+            width: 80%;
+            height: auto;
+            top: 40px;
+            right: -40px;
+          }
+          &--description {
+            position: absolute;
+            width: 80%;
+            height: auto;
+            bottom: 0px;
+            right: -40px;
+          }
+          &--title:hover {
           cursor: pointer;
           transform: translateX(-5px);
           color: $red;
+          }
+          &--title:hover + img, &--title:hover + p {
+            display: block;
+          }
         }
       }
     }
