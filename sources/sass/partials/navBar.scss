@@ -24,7 +24,7 @@
       height: 2px;
       width: 100%;
       position: absolute;
-      top: 6px;
+      top: 4px;
       left: 0;
       background: rgba(255,255,255,0.30);
       z-index: -1;
@@ -44,8 +44,8 @@
     &--link {
       background-color: #000;
       display: inline-block;
-      height: 14px;
-      width: 14px;
+      height: 10px;
+      width: 10px;
       border: 1px solid #FFFFFF;
       border-radius: 50%;
       transition-duration: .3s;
@@ -57,8 +57,8 @@
         display: block;
         top: -1px;
         left: -1px;
-        height: 14px;
-        width: 14px;
+        height: 10px;
+        width: 10px;
         border-radius: 50%;
         background-color: $red;
         transform-origin: 50%, 50%;
