@@ -185,51 +185,83 @@
       opacity: 0.9;
       transition: transform 0.3s cubic-bezier(.43,-0.83,.53,1.73);
     }
+    .info {
+      font-family: $title;
+      font-size: 36px;
+      opacity: 0;
+      position: absolute;
+      top: 30px;
+      right: 10%;
+      color: $red;
+      z-index: 100;
+      transition: opacity 0.3s ease-in-out;
+    }
     &--cercle:hover {
       transform: scale(1.2);
       cursor:pointer;
     }
-    .cercle-1 {
+    .cercle-1:hover + .info-1 {
+      opacity: 1;
+    }
+    .cercle-2:hover + .info-2 {
+      opacity: 1;
+    }
+    .cercle-3:hover + .info-3 {
+      opacity: 1;
+    }
+    .cercle-4:hover + .info-4 {
+      opacity: 1;
+    }
+    .cercle-5:hover + .info-5 {
+      opacity: 1;
+    }
+    .cercle-6:hover + .info-6 {
+      opacity: 1;
+    }
+    .cercle-7:hover + .info-7 {
+      opacity: 1;
+    }
+    &--cercle.cercle-1 {
       width: 50px;
       height: 50px;
       top: 44%;
       left: 48.7%;
     }
-    .cercle-2 {
+    &--cercle.cercle-2 {
       width: 35px;
       height: 35px;
       top: 62%;
       left: 45%;
     }
-    .cercle-3 {
+    &--cercle.cercle-3 {
       width: 22px;
       height: 22px;
       top: 74%;
       left: 58%;
     }
-    .cercle-4 {
+    &--cercle.cercle-4 {
       width: 12px;
       height: 12px;
       top: 85%;
       left: 45%;
     }
-    .cercle-5 {
+    &--cercle.cercle-5 {
       width: 30px;
       height: 30px;
       top: 32%;
       left: 41%;
     }
-    .cercle-6 {
-      width: 23px;
-      height: 23px;
+    &--cercle.cercle-6 {
+      width: 21px;
+      height: 21px;
       top: 34%;
       left: 48%;
     }
-    .cercle-7 {
+    &--cercle.cercle-7 {
       width: 23px;
       height: 23px;
-      top: 34%;
-      left: 48%;
+      top: 19%;
+      left: 42%;
     }
   }
 }
