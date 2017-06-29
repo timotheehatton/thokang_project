@@ -90,6 +90,7 @@ body {
     &--description {
       margin-top: 85px;
       color: $white;
+      font-size: 18px;
     }
   }
 }
@@ -116,14 +117,29 @@ body {
 
 
 .scene--active {
-  .enter--animation {
-    animation: draw 4s ease-in-out forwards;
-    @keyframes draw {
+  .animation--svg--scaley {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    animation: svgScaley 1s ease-in-out forwards;
+    @keyframes svgScaley {
       0% {
-        opacity: 0;
+        transform: scaleY(0);
       }
       100% {
-        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+  }
+  .animation--svg--scalex {
+    transform: scaleX(1);
+    transform-origin: left;
+    animation: svgScalex 1s ease-in-out forwards;
+    @keyframes svgScalex {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
       }
     }
   }
