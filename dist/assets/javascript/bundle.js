@@ -6,12 +6,27 @@ dom.body = document.querySelector('body');
 
 //chapter page
 if (dom.body.querySelector('.scene')) {
+  dom.chapter = dom.body.querySelector('.chapter');
   dom.scene = dom.body.querySelectorAll('.scene');
   dom.timeline_point = dom.body.querySelectorAll('.nav--timeline--link');
   dom.timeline_bar = dom.body.querySelector('.nav--timeline--bar--full');
   dom.btn_menu = dom.body.querySelector('.nav--menu');
   dom.btn_menu_close = dom.body.querySelector('.popin--close');
   dom.menu_popin = dom.body.querySelector('.popin');
+
+  //slider dimensions
+  var width_slider = function width_slider() {
+    var window_width = window.innerWidth;
+    for (var i = 0; i < dom.scene.length; i++) {
+      dom.scene[i].style.width = window_width + 'px';
+    }
+    dom.chapter.style.width = window_width * dom.scene.length + 'px';
+  };
+
+  width_slider();
+  window.addEventListener("resize", function () {
+    width_slider();
+  });
 
   //next scene function
   var current_scene = 0;
@@ -20,15 +35,11 @@ if (dom.body.querySelector('.scene')) {
   var next_scene = function next_scene() {
     if (current_scene < dom.scene.length - 1) {
       current_scene++;
-      dom.scene[current_scene].style.display = "block";
-      setTimeout(function () {
-        dom.scene[current_scene].classList.add('scene--active');
-        dom.timeline_point[current_scene].classList.add('nav--timeline--link--active');
-        dom.timeline_bar.style.transform = 'scaleX(' + current_scene * dom.scene.length / 20 + ')';
-        setTimeout(function () {
-          dom.scene[current_scene - 1].style.display = "none";
-        }, 300);
-      }, 10);
+      dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)";
+      dom.scene[current_scene].classList.add('scene--active');
+      dom.scene[current_scene - 1].classList.remove('scene--active');
+      dom.timeline_point[current_scene].classList.add('nav--timeline--link--active');
+      dom.timeline_bar.style.transform = 'scaleX(' + 1 / (dom.scene.length - 1) * current_scene + ')';
     }
     // else {
     //   chapter++
@@ -51,13 +62,9 @@ if (dom.body.querySelector('.scene')) {
       dom.scene[current_scene].classList.remove('scene--active');
       dom.timeline_point[current_scene].classList.remove('nav--timeline--link--active');
       current_scene--;
-      dom.timeline_bar.style.transform = 'scaleX(' + current_scene * dom.scene.length / 20 + ')';
-      setTimeout(function () {
-        dom.scene[current_scene].style.display = "block";
-        setTimeout(function () {
-          dom.scene[current_scene + 1].style.display = "none";
-        }, 300);
-      }, 10);
+      dom.scene[current_scene].classList.add('scene--active');
+      dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)";
+      dom.timeline_bar.style.transform = 'scaleX(' + 1 / (dom.scene.length - 1) * current_scene + ')';
     }
   };
 
@@ -80,13 +87,13 @@ if (dom.body.querySelector('.scene')) {
       if (current_scene > i) {
         dom.scene[current_scene].classList.remove('scene--active');
         dom.timeline_point[current_scene].classList.remove('nav--timeline--link--active');
-        current_scene = i;
-        dom.scene[current_scene].classList.add('scene--active');
-        dom.timeline_point[current_scene].classList.add('nav--timeline--link--active');
+        current_scene--;
+        dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)";
         dom.timeline_bar.style.transform = 'scaleX(' + current_scene * dom.scene.length / 20 + ')';
       }
       if (current_scene < i) {
-        current_scene = i;
+        current_scene++;
+        dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)";
         dom.scene[current_scene].classList.add('scene--active');
         dom.timeline_point[current_scene].classList.add('nav--timeline--link--active');
         dom.timeline_bar.style.transform = 'scaleX(' + current_scene * dom.scene.length / 20 + ')';
@@ -124,6 +131,13 @@ if (dom.body.querySelector('.mainHeader')) {
   dom.main_header_front = dom.body.querySelector('.mainHeader--content--front');
   dom.main_header_btn = dom.body.querySelector('.mainHeader--content--center--btn a');
 
+  dom.main_header_btn.addEventListener('mouseenter', function (e) {
+    sound('../assets/sounds/gun_reload.mp3');
+  });
+
+  dom.main_header_btn.addEventListener('click', function (e) {
+    sound('../assets/sounds/gun_shot.mp3');
+  });
   //mouse paralax
   var paralax = function paralax() {
     window.addEventListener('mousemove', function (e) {
@@ -141,14 +155,6 @@ function sound(src) {
   var sound = new Audio(src);
   sound.autoplay = true;
 }
-
-dom.main_header_btn.addEventListener('mouseenter', function (e) {
-  sound('../assets/sounds/gun_reload.mp3');
-});
-
-dom.main_header_btn.addEventListener('click', function (e) {
-  sound('../assets/sounds/gun_shot.mp3');
-});
 
 // $(".ajax--btn").mouseover(function(){
 //   sound('../assets/sounds/gun_reload.mp3');
