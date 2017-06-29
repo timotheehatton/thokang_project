@@ -66,7 +66,9 @@
       width: 710px;
       height: 420px;
       padding: 0 100px;
-      background-color: #000;
+      background-color: $black;
+      opacity: 0.9;
+      border-radius: 4px;
       position: absolute;
       bottom: 160px;
       right: 260px;
@@ -175,6 +177,59 @@
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat; 
+    }
+    &--cercle {
+      position: absolute;
+      border-radius: 200px;
+      background: $red;
+      opacity: 0.9;
+      transition: transform 0.3s cubic-bezier(.43,-0.83,.53,1.73);
+    }
+    &--cercle:hover {
+      transform: scale(1.2);
+      cursor:pointer;
+    }
+    .cercle-1 {
+      width: 50px;
+      height: 50px;
+      top: 44%;
+      left: 48.7%;
+    }
+    .cercle-2 {
+      width: 35px;
+      height: 35px;
+      top: 62%;
+      left: 45%;
+    }
+    .cercle-3 {
+      width: 22px;
+      height: 22px;
+      top: 74%;
+      left: 58%;
+    }
+    .cercle-4 {
+      width: 12px;
+      height: 12px;
+      top: 85%;
+      left: 45%;
+    }
+    .cercle-5 {
+      width: 30px;
+      height: 30px;
+      top: 32%;
+      left: 41%;
+    }
+    .cercle-6 {
+      width: 23px;
+      height: 23px;
+      top: 34%;
+      left: 48%;
+    }
+    .cercle-7 {
+      width: 23px;
+      height: 23px;
+      top: 34%;
+      left: 48%;
     }
   }
 }
