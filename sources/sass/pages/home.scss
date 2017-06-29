@@ -34,17 +34,18 @@
         position: absolute;
         transition: all 0.3s ease-in-out;
         box-shadow: 0px 0px 8px 1px #FE002A;
+        font-family: $title;
       }
       &--btn a:hover {
-        background: darken($red, 10);
+        background: darken($red, 6);
       }
       &--subtitle {
-        font-size: 22px;
+        font-size: 16px;
         font-weight: 100;
-        text-transform: uppercase;
-        margin-top: 100px;
-        letter-spacing: 2px;
-        color: #fff;
+        margin-top: 120px;
+        letter-spacing: 1px;
+        color: rgb(26, 26, 26);
+        font-family: $title;
       }
     }
     &--back {
