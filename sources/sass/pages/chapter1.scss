@@ -1,6 +1,8 @@
 .chapter1 {
   .scene1 {
-    background-image: url(../../assets/img/menu_chapter1.jpg); 
+    background-image: url(../../assets/img/menu_chapter1.jpg);
+    background-position: center;
+    background-size: cover;
   }
   .scene2 {
     background-color: #191919;
@@ -32,7 +34,7 @@
   }
   .scene4 {
     background-color: #191919;
-    background-image: url(../../assets/img/chapter1_slide_4.jpg); 
+    background-image: url(../../assets/img/chapter1_slide_4.jpg);
     background-position: center;
     background-size: cover;
     &--group {
@@ -61,13 +63,6 @@
         position: relative;
         top: -26px;
       }
-    }
-    &--overlay {
-      z-index: 100;
-      background-color: $black;
-      opacity: 0.7;
-      width: 100%;
-      height: 100%;
     }
   }
   .scene5 {
