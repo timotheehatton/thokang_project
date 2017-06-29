@@ -101,7 +101,7 @@
       {
         opacity: 0;
         z-index: 18;
-        transition: opacity 0.15s ease-in-out; 
+        transition: opacity 0.15s ease-in-out;
       }
       &--geographic.active-content img,
       &--geographic.active-content p,
@@ -154,7 +154,7 @@
         color: $red;
       }
       &--title:hover {
-        
+
       }
       &--title:hover::after {
         opacity:1;
