@@ -64,6 +64,13 @@
     }
   }
   .scene5 {
+    .category-active div {
+      color: $red;
+      transform: translateX(-6px);
+    }
+    .category-active img, .category-active p {
+      display: inline-block;
+    }
     background-color: #191919;
     &--card {
       background-color: $black;
@@ -73,39 +80,48 @@
       top: 135px;
       bottom: 10%;
       border-radius: 2px;
-      padding: 40px 50px;
+      padding: 30px 40px;
       width: 68%;
       font-family: $title;
       &--categories {
         color: $transparent-white;
         &--category {
-          img, p {
-            display: none;
-          }
           &--title {
-            margin-bottom: 20px;
+            display: inline-block;
+            padding: 15px 10px;
             transition: all 0.15s ease-in-out;
           }
           &--img {
             position: absolute;
             width: 80%;
             height: auto;
-            top: 40px;
-            right: -40px;
+            bottom: -60px;
+            left: 200px;
+            border-radius: 1px;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.12);
+            display: none;
           }
           &--description {
+            z-index: 200;
             position: absolute;
-            width: 80%;
+            width: 45%;
             height: auto;
-            bottom: 0px;
-            right: -40px;
+            bottom: -50px;
+            left: 230px;
+            font-family: $content;
+            font-size: 14px;
+            color: $white;
+            display: none;
           }
           &--title:hover {
-          cursor: pointer;
-          transform: translateX(-5px);
-          color: $red;
+            cursor: pointer;
+            transform: translateX(-6px);
+            color: $red;
           }
-          &--title:hover + img, &--title:hover + p {
+          &--title:hover + img {
+            display: block;
+          }
+          &--title:hover + img + p {
             display: block;
           }
         }
