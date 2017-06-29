@@ -23,23 +23,26 @@
       transform: scaleX(0);
       transition: transform ease-in-out 0.35s;
       transform-origin: left;
-      .card-content{
-        opacity:0;
+
+      .card-content {
+        opacity: 0;
         transition: opacity ease-in-out 0.35s 0.38s;
         transform-origin: left;
       }
+
       video {
         width: 45%;
-        height:auto;
+        height: auto;
         position: absolute;
-        top:50%;
-        left:50%;
+        top: 50%;
+        left: 50%;
         transform: translateX(-50%) translateY(-50%);
       }
-      a.player--video--btn{
+
+      a.player--video--btn {
         position: absolute;
-        top:90%;
-        left:50%;
+        top: 90%;
+        left: 50%;
         transform: translateX(-50%) translateY(-50%);
       }
     }
@@ -57,15 +60,18 @@
     background-image: url("../../assets/img/chapter2_slide_4.jpg");
     background-position: center;
     background-size: cover;
-    .card{
+
+    .card {
       transform: scaleX(0);
       transition: transform ease-in-out 0.35s;
       transform-origin: left;
-      .card-content{
-        opacity:0;
+
+      .card-content {
+        opacity: 0;
         transition: opacity ease-in-out 0.35s 0.38s;
         transform-origin: left;
       }
+
       p.card-type {
         font-size: 18px;
         color: $grey;
@@ -80,7 +86,7 @@
         color: $white;
         width: 70vw;
         vertical-align: top;
-        margin:20px 30px;
+        margin: 20px 30px;
       }
     }
   }
@@ -270,11 +276,13 @@
       transform: scaleX(0);
       transition: transform ease-in-out 0.35s;
       transform-origin: left;
-      .card-content{
-        opacity:0;
+
+      .card-content {
+        opacity: 0;
         transition: opacity ease-in-out 0.35s 0.38s;
         transform-origin: left;
       }
+
       .card-contents {
         width: 65vw;
       }
@@ -291,9 +299,9 @@
     .player--video--btn {
       display: block;
       position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+      top: 80%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
     }
 
     p.content {
@@ -307,7 +315,8 @@
   }
 }
 
-div.card, div.card-rd {
+div.card,
+div.card-rd {
   background-color: black;
   position: absolute;
   top: 15vh;
@@ -317,11 +326,12 @@ div.card, div.card-rd {
   margin: auto;
   z-index: 102;
   border-radius: 4px;
-  a{
-    font-size:30px;
-    color:$white;
+
+  a {
+    font-size: 30px;
+    color: $white;
     position: absolute;
-    top:20px;
+    top: 20px;
     right: 30px;
   }
 
@@ -365,6 +375,7 @@ div.card, div.card-rd {
   }
 }
 // testimony
+
 p.davao-title {
   z-index: 10;
   position: absolute;
@@ -454,7 +465,75 @@ div.testimony-button {
   margin-top: 100px;
 }
 
-.testimony-active{
-  transform:scaleX(1);
+.testimony-active {
+  transform: scaleX(1);
   opacity: 1;
+}
+
+// More informations
+a.popup--btn{
+  z-index:21;
+}
+
+div.more-infos {
+  background-color: white;
+  width: 40vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 120;
+  will-change: transform;
+  transition: transform ease 0.38s;
+  transform-origin: right;
+  transform:translateX(40vw);
+
+  div.more-infos-container {
+    width: 100%;
+    height: auto;
+    padding: 0px 40px;
+    a.close-card{
+      font-size:35px;
+      position: absolute;
+      right:40px;
+      top:30px;
+      transition: transform ease 0.3s;
+      &:hover{
+        transform: rotate(180deg);
+      }
+    }
+
+    p.infos-subtitle,
+    p.infos-title {
+      font-family: "Fjalla One", sans-serif;
+      font-size: 24px;
+      color: $black;
+      text-transform: uppercase;
+      margin: 30px 0px;
+    }
+
+    p.infos-subtitle {
+      font-size: 20px;
+      color: #FE002A;
+      margin: -20px 0px;
+    }
+
+    p.infos-subsubtitle {
+      font-size: 16px;
+      font-family: $content;
+      margin: 20px 0px;
+    }
+
+    div.infos-line {
+      width: 100%;
+      margin: 40px 0px;
+      height: 2px;
+      background-color: $black;
+    }
+
+    p.infos {
+      font-size: 14px;
+      font-family: $content;
+    }
+  }
 }
