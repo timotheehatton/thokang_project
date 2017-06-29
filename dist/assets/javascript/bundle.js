@@ -13,6 +13,7 @@ if (dom.body.querySelector('.scene')) {
   dom.btn_menu = dom.body.querySelector('.nav--menu');
   dom.btn_menu_close = dom.body.querySelector('.popin--close');
   dom.menu_popin = dom.body.querySelector('.popin');
+  dom.menu_sound = dom.body.querySelector('.nav--sound');
 
   //slider dimensions
   var width_slider = function width_slider() {
@@ -34,6 +35,7 @@ if (dom.body.querySelector('.scene')) {
 
   var next_scene = function next_scene() {
     if (current_scene < dom.scene.length - 1) {
+      sound('../assets/sounds/sound_scroll.mp3', 0.1);
       current_scene++;
       dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)";
       dom.scene[current_scene].classList.add('scene--active');
@@ -59,6 +61,7 @@ if (dom.body.querySelector('.scene')) {
   //previous scene function
   var previous_scene = function previous_scene() {
     if (current_scene > 0) {
+      sound('../assets/sounds/sound_scroll.mp3', 0.1);
       dom.scene[current_scene].classList.remove('scene--active');
       dom.timeline_point[current_scene].classList.remove('nav--timeline--link--active');
       current_scene--;
@@ -85,6 +88,7 @@ if (dom.body.querySelector('.scene')) {
   var _loop = function _loop(i) {
     dom.timeline_point[i].addEventListener('click', function (e) {
       if (current_scene > i) {
+        sound('../assets/sounds/sound_scroll.mp3', 0.1);
         dom.scene[current_scene].classList.remove('scene--active');
         dom.timeline_point[current_scene].classList.remove('nav--timeline--link--active');
         current_scene--;
@@ -92,6 +96,7 @@ if (dom.body.querySelector('.scene')) {
         dom.timeline_bar.style.transform = 'scaleX(' + current_scene * dom.scene.length / 20 + ')';
       }
       if (current_scene < i) {
+        sound('../assets/sounds/sound_scroll.mp3', 0.1);
         current_scene++;
         dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)";
         dom.scene[current_scene].classList.add('scene--active');
@@ -106,7 +111,14 @@ if (dom.body.querySelector('.scene')) {
     _loop(i);
   }
 
-  //chapter menu
+  dom.btn_menu.addEventListener('mouseover', function (e) {
+    sound('../assets/sounds/sound_button.mp3', 0.1);
+  });
+  dom.menu_sound.addEventListener('mouseover', function (e) {
+    sound('../assets/sounds/sound_button.mp3', 0.1);
+  });
+
+  //chapter menu sound('../assets/sounds/sound_scroll.mp3', 0.1)
   dom.btn_menu.addEventListener('click', function (e) {
     dom.menu_popin.style.display = 'block';
     setTimeout(function () {
@@ -132,11 +144,11 @@ if (dom.body.querySelector('.mainHeader')) {
   dom.main_header_btn = dom.body.querySelector('.mainHeader--content--center--btn a');
 
   dom.main_header_btn.addEventListener('mouseenter', function (e) {
-    sound('../assets/sounds/gun_reload.mp3');
+    sound('../assets/sounds/gun_reload.mp3', 1);
   });
 
   dom.main_header_btn.addEventListener('click', function (e) {
-    sound('../assets/sounds/gun_shot.mp3');
+    sound('../assets/sounds/gun_shot.mp3', 1);
   });
   //mouse paralax
   var paralax = function paralax() {
@@ -151,9 +163,10 @@ if (dom.body.querySelector('.mainHeader')) {
 }
 
 //Sound design
-function sound(src) {
+function sound(src, volume) {
   var sound = new Audio(src);
   sound.autoplay = true;
+  sound.volume = volume;
 }
 
 // $(".ajax--btn").mouseover(function(){
