@@ -63,21 +63,20 @@
             </g>
         </svg>
       </a>
-      <div class="card">
-        <a href="#">&times</a>
+      <div class="card-rd">
         <p class="card-title">rodriguo duterte</p>
         <p class="card-subtitle">alias "the punisher"</p>
         <div>
           <p class="card-type">birth</p>
-          <p class="card-content">28 of March 1945 in Maasin</p>
+          <p class="card-contents">28 of March 1945 in Maasin</p>
         </div>
         <div>
           <p class="card-type">family</p>
-          <p class="card-content">Father lawyer and governor of Davao</p>
+          <p class="card-contents">Father lawyer and governor of Davao</p>
         </div>
         <div>
           <p class="card-type">career</p>
-          <p class="card-content">1977 - 1979 | Special Counsel <br/> 1979 - 1986 | Assistant City Prosecutor <br/> 1986 - 1988 | Officer-in-charge vice mayor of Davao <br/> 1988 - 1998 | Mayor of Davao <br/> 1998 - 2001 | Congressman of Davao City <br/> 2001 - 2010 | Mayor
+          <p class="card-contents">1977 - 1979 | Special Counsel <br/> 1979 - 1986 | Assistant City Prosecutor <br/> 1986 - 1988 | Officer-in-charge vice mayor of Davao <br/> 1988 - 1998 | Mayor of Davao <br/> 1998 - 2001 | Congressman of Davao City <br/> 2001 - 2010 | Mayor
             of Davao <br/> 2010 - 2013 | Vice Mayor <br/>
           </p>
         </div>
@@ -87,24 +86,25 @@
     </section>
     <section class="scene scene3">
       <h1 class="scene--h1">THE ETERNAL KING OF DAVAO</h1>
-      <div class="testimony-button">
+      <div class="testimony-button" data-testimony="0">
         <img src="../assets/img/testimony_davao_1.jpg" alt="amnesty international" />
         <a href="#"></a><span><p>Testimony</p><p>Ex-dead squad member</p></span></a>
       </div>
-      <div class="testimony-button second-testimony">
+      <div class="testimony-button second-testimony" data-testimony="1">
         <img src="../assets/img/testimony_davao_2.jpg" alt="amnesty international" />
         <a href="#"><span><p>Testimony</p><p>Ex-dead squad member</p></span></a>
       </div>
       <!-- edgar testimony-->
       <div class="card">
-        <a href="#">&times</a>
-        <p class="card-title">EDGAR MATOBATO</p>
-        <p class="card-subtitle">ex-dead squad member</p>
-        <div>
-          <video>
+        <div class="card-content">
+          <a href="#" class="close-card" data-testimony="0">&times</a>
+          <p class="card-title">EDGAR MATOBATO</p>
+          <p class="card-subtitle">ex-dead squad member</p>
+          <div>
+            <video>
             <source src="../assets/videos/chapter2_part2_testimony1.mp4" type="video/mp4">
           </video>
-          <a href="#" class="player--video--btn">
+            <a href="#" class="player--video--btn">
             <svg width="17px" height="19px" viewBox="0 0 17 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
@@ -116,18 +116,20 @@
                 </g>
             </svg>
           </a>
+          </div>
         </div>
       </div>
       <!-- arturo testimony-->
       <div class="card">
-        <a href="#">&times</a>
-        <p class="card-title">arturo lescanas</p>
-        <p class="card-subtitle">ex-dead squad member</p>
-        <div>
-          <video>
+        <div class="card-content">
+          <a href="#" class="close-card" data-testimony="1">&times</a>
+          <p class="card-title">arturo lescanas</p>
+          <p class="card-subtitle">ex-dead squad member</p>
+          <div>
+            <video>
             <source src="../assets/videos/chapter2_part2_testimony2.mp4" type="video/mp4">
           </video>
-          <a href="#" class="player--video--btn">
+            <a href="#" class="player--video--btn">
             <svg width="17px" height="19px" viewBox="0 0 17 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
@@ -139,6 +141,7 @@
                 </g>
             </svg>
           </a>
+          </div>
         </div>
       </div>
       <video class="video" autoplay loop>
@@ -180,35 +183,39 @@
       <p class="davao-title">1 040 people</p>
       <p class="davao-content">were killed by the Davao Death Squad (DDS) between 1998 and 2008. <br/><br/> On the order of former Davao mayor, Rodrigo Duterte, assailants were provided in weapons and informations by the local police. Most of the time, it was a shoot to kill
         policy, killing people without arrest. </p>
-      <div class="testimony-button">
+      <div class="testimony-button" data-testimony="2">
         <img src="../assets/img/logo_amnesty.jpg" alt="amnesty international" />
         <a href="#"></a><span><p>Testimony</p><p>Amnesty International</p></span></a>
       </div>
-      <div class="testimony-button second-testimony">
+      <div class="testimony-button second-testimony" data-testimony="3">
         <img src="../assets/img/testimony_people.jpg" alt="amnesty international" />
         <a href="#"><span><p>Testimony</p><p>Philippines people</p></span></a>
       </div>
       <!-- amnesty testimony-->
       <div class="card">
-        <a href="#">&times</a>
+        <a href="#" class="close-card" data-testimony="2">&times</a>
         <p class="card-title">amnesty international</p>
         <p class="card-subtitle">condamnation for raping human rights</p>
         <p class="card-type">thought</p>
-        <p class="card-content">According to Amnesty International and local human rights groups, there were over 1 000 people killed in Davao City by death squads between 1998 and 2009 report by Human Rights Watch. In Mindanao many such killings, including those of minors, were attributed to the so-called “Davao Death Squad” vigilante group. It was reported that local officials in some areas advocated a “shoot to kill” policy with respect to criminal suspects resisting arrest.</p>
+        <p class="card-contents">According to Amnesty International and local human rights groups, there were over 1 000 people killed in Davao City by death squads between 1998 and 2009 report by Human Rights Watch. In Mindanao many such killings, including those of minors,
+          were attributed to the so-called “Davao Death Squad” vigilante group. It was reported that local officials in some areas advocated a “shoot to kill” policy with respect to criminal suspects resisting arrest.</p>
       </div>
       <!-- people testimony-->
       <div class="card">
-        <a href="#">&times</a>
-        <p class="card-title">philippines people</p>
-        <p class="card-subtitle">agreed with duderte</p>
-        <p class="card-type">thought</p>
-        <p class="card-content">There appears to have been a certain degree of public approval among citizens of Davao City for the actions of the death squad, primarily fueled by public discontent at “the arduous and ineffective judicial system” that created an environment where extrajudicial executions seemed to be a “practical resort” to suppress crime in the city.</p>
+        <div class="card-content">
+          <a href="#" class="close-card" data-testimony="3">&times</a>
+          <p class="card-title">philippines people</p>
+          <p class="card-subtitle">agreed with duderte</p>
+          <p class="card-type">thought</p>
+          <p class="card-contents">There appears to have been a certain degree of public approval among citizens of Davao City for the actions of the death squad, primarily fueled by public discontent at “the arduous and ineffective judicial system” that created an environment
+            where extrajudicial executions seemed to be a “practical resort” to suppress crime in the city.</p>
+        </div>
       </div>
       <div class="overlay"></div>
     </section>
     <section class="scene scene5">
       <h1 class="scene--h1">A CONTROVERSIAL CHARACTER</h1>
-      <img src="../assets/img/character_duterte.png" alt="rodriguo duterte quotes"/>
+      <img src="../assets/img/character_duterte.png" alt="rodriguo duterte quotes" />
       <div class="container-quotes">
         <div class="quotes-left">
           <div class="quote">
@@ -300,16 +307,16 @@
           <p>People were tired of a country pro-liberal, subject to american control.</p>
         </div>
         <div class="scene6--content--production scene6--content--div">
-          <img src="../assets/img/chapter2_part5_corruption.jpg"  alt="">
-        <p>The country is very submitted to corruption, especially in the security forces which are corrupted by 40% according to the president himself</p>
+          <img src="../assets/img/chapter2_part5_corruption.jpg" alt="">
+          <p>The country is very submitted to corruption, especially in the security forces which are corrupted by 40% according to the president himself</p>
         </div>
         <div class="scene6--content--areas scene6--content--div">
           <img src="../assets/img/chapter2_part5_inequalities.jpg" alt="">
-        <p>Despite promising numbers in recent years, continues to see inequalities widening. The rate of growth is more than 6% but corruption continues to plague public affairs.</p>
+          <p>Despite promising numbers in recent years, continues to see inequalities widening. The rate of growth is more than 6% but corruption continues to plague public affairs.</p>
         </div>
         <div class="scene6--content--women scene6--content--div">
           <img src="../assets/img/chap2_part5_people.jpg" alt="">
-        <p>Most of his electorate advances the fact that he is close to the people, similar to the people, for having voted for him</p>
+          <p>Most of his electorate advances the fact that he is close to the people, similar to the people, for having voted for him</p>
         </div>
       </div>
     </section>
@@ -334,32 +341,33 @@
       <p class="davao-subtitle">people have voted for Rodrigo Duterte.</p>
       <p class="davao-title testimony-2">86%</p>
       <p class="davao-content testimony-3">of Filipinos have "trust" in the President's performance.</p>
-      <div class="testimony-button">
+      <div class="testimony-button" data-testimony="4">
         <img src="../assets/img/testimony_badoy.jpg" alt="amnesty international" />
         <a href="#"></a><span><p>Testimony</p><p>Dr. Lorraine Badoy</p></span></a>
       </div>
-      <div class="testimony-button testimony-1">
+      <div class="testimony-button testimony-1" data-testimony="5">
         <img src="../assets/img/testimony_melchor.jpeg" alt="amnesty international" />
         <a href="#"><span><p>Testimony</p><p>Melchor San Jose</p></span></a>
       </div>
-      <div class="testimony-button testimony-2">
+      <div class="testimony-button testimony-2" data-testimony="6">
         <img src="../assets/img/testimony_christina.jpg" alt="amnesty international" />
         <a href="#"><span><p>Testimony</p><p>Christina Fabiala</p></span></a>
       </div>
-      <div class="testimony-button testimony-3">
+      <div class="testimony-button testimony-3" data-testimony="7">
         <img src="../assets/img/testimony_querol.jpeg" alt="amnesty international" />
         <a href="#"><span><p>Testimony</p><p>General Vidal Querol</p></span></a>
       </div>
       <!-- doctor testimony-->
       <div class="card">
-        <a href="#">&times</a>
-        <p class="card-title">DR LORRAINE BADOY</p>
-        <p class="card-subtitle">DOCTOR AND NGO VOLUNTEER</p>
-        <div>
-          <p class="card-type">thought</p>
-          <p class="card-content">former president Aquino ineptly handled the tragedy and she is convinced that Duterte, by contrast, is a man of action. Because she believes his heart is truly in public service and helping poor people. She thinks he's done "amazing things."</p>
-          <p class="testimony-quote">« He got things done that other presidents haven’t »</p>
-          <a href="#" class="player--video--btn">
+        <div class="card-content">
+          <a href="#" class="close-card" data-testimony="4">&times</a>
+          <p class="card-title">DR LORRAINE BADOY</p>
+          <p class="card-subtitle">DOCTOR AND NGO VOLUNTEER</p>
+          <div>
+            <p class="card-type">thought</p>
+            <p class="card-contents">former president Aquino ineptly handled the tragedy and she is convinced that Duterte, by contrast, is a man of action. Because she believes his heart is truly in public service and helping poor people. She thinks he's done "amazing things."</p>
+            <p class="testimony-quote">« He got things done that other presidents haven’t »</p>
+            <a href="#" class="player--video--btn">
             <svg width="17px" height="19px" viewBox="0 0 17 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
@@ -371,19 +379,21 @@
                 </g>
             </svg>
           </a>
-          <span class="player--video--title">listen to the testimony</span>
+            <span class="player--video--title">listen to the testimony</span>
+          </div>
         </div>
       </div>
       <!-- melchor testimony-->
       <div class="card">
-        <a href="#">&times</a>
-        <p class="card-title">MELCHOR SAN JOSE</p>
-        <p class="card-subtitle">CIVIL</p>
-        <div>
-          <p class="card-type">thought</p>
-          <p class="card-content">He voted for Binay but now supports Duterte because of his tough position on crime. He says this is the fastest way: "If you let these (cases) go through the legal system, that takes too long. You'll count years."</p>
-          <p class="testimony-quote">"If the cases pile up, we'll never find a solution. Judges and lawyers are paid off. It will never stop."</p>
-          <a href="#" class="player--video--btn">
+        <div class="card-content">
+          <a href="#" class="close-card" data-testimony="5">&times</a>
+          <p class="card-title">MELCHOR SAN JOSE</p>
+          <p class="card-subtitle">CIVIL</p>
+          <div>
+            <p class="card-type">thought</p>
+            <p class="card-contents">He voted for Binay but now supports Duterte because of his tough position on crime. He says this is the fastest way: "If you let these (cases) go through the legal system, that takes too long. You'll count years."</p>
+            <p class="testimony-quote">"If the cases pile up, we'll never find a solution. Judges and lawyers are paid off. It will never stop."</p>
+            <a href="#" class="player--video--btn">
             <svg width="17px" height="19px" viewBox="0 0 17 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
@@ -395,20 +405,22 @@
                 </g>
             </svg>
           </a>
-          <span class="player--video--title">listen to the testimony</span>
+            <span class="player--video--title">listen to the testimony</span>
+          </div>
         </div>
       </div>
       <!-- Christina testimony-->
       <div class="card">
-        <a href="#">&times</a>
-        <p class="card-title">Christina Fabiala</p>
-        <p class="card-subtitle">domestic worker for 20 years in Hong Kong</p>
-        <div>
-          <p class="card-type">thought</p>
-          <p class="card-content">She voted for Duterte because he's different from the other politicians. "He has the guts to do what no other politicians did before," she says.
-          With such a high percentage of the nation still mired in poverty, she says it was time to try something new. </p>
-          <p class="testimony-quote">"Traditional politicians mostly catered for rich people... Duterte, he can talk to the people the way poor people talk."</p>
-          <a href="#" class="player--video--btn">
+        <div class="card-content">
+          <a href="#" class="close-card" data-testimony="6">&times</a>
+          <p class="card-title">Christina Fabiala</p>
+          <p class="card-subtitle">domestic worker for 20 years in Hong Kong</p>
+          <div>
+            <p class="card-type">thought</p>
+            <p class="card-contents">She voted for Duterte because he's different from the other politicians. "He has the guts to do what no other politicians did before," she says. With such a high percentage of the nation still mired in poverty, she says it was time to try
+              something new. </p>
+            <p class="testimony-quote">"Traditional politicians mostly catered for rich people... Duterte, he can talk to the people the way poor people talk."</p>
+            <a href="#" class="player--video--btn">
             <svg width="17px" height="19px" viewBox="0 0 17 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
@@ -420,19 +432,21 @@
                 </g>
             </svg>
           </a>
-          <span class="player--video--title">listen to the testimony</span>
+            <span class="player--video--title">listen to the testimony</span>
+          </div>
         </div>
       </div>
       <!-- General Querol testimony-->
       <div class="card">
-        <a href="#">&times</a>
-        <p class="card-title">General Vidal Querol</p>
-        <p class="card-subtitle">the Metro Manila Police Chief from 2005 to 2006</p>
-        <div>
-          <p class="card-type">thought</p>
-          <p class="card-content">According to Querol, this is because Duterte is not beholden to any of the political, social or economic elite. Without being beholden to anyone, he can focus his energy on helping the people.</p>
-          <p class="testimony-quote">"We cannot doubt the sincerity of this man to help the poorest of the poor"</p>
-          <a href="#" class="player--video--btn">
+        <div class="card-content">
+          <a href="#" class="close-card" data-testimony="7">&times</a>
+          <p class="card-title">General Vidal Querol</p>
+          <p class="card-subtitle">the Metro Manila Police Chief from 2005 to 2006</p>
+          <div>
+            <p class="card-type">thought</p>
+            <p class="card-contents">According to Querol, this is because Duterte is not beholden to any of the political, social or economic elite. Without being beholden to anyone, he can focus his energy on helping the people.</p>
+            <p class="testimony-quote">"We cannot doubt the sincerity of this man to help the poorest of the poor"</p>
+            <a href="#" class="player--video--btn">
             <svg width="17px" height="19px" viewBox="0 0 17 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
@@ -444,7 +458,8 @@
                 </g>
             </svg>
           </a>
-          <span class="player--video--title">listen to the testimony</span>
+            <span class="player--video--title">listen to the testimony</span>
+          </div>
         </div>
       </div>
       <div class="overlay"></div>

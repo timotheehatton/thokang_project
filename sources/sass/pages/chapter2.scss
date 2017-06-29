@@ -20,6 +20,14 @@
 
   .scene3 {
     .card {
+      transform: scaleX(0);
+      transition: transform ease-in-out 0.35s;
+      transform-origin: left;
+      .card-content{
+        opacity:0;
+        transition: opacity ease-in-out 0.35s 0.38s;
+        transform-origin: left;
+      }
       video {
         width: 45%;
         height:auto;
@@ -30,7 +38,7 @@
       }
       a.player--video--btn{
         position: absolute;
-        bottom:5px;
+        top:90%;
         left:50%;
         transform: translateX(-50%) translateY(-50%);
       }
@@ -50,6 +58,14 @@
     background-position: center;
     background-size: cover;
     .card{
+      transform: scaleX(0);
+      transition: transform ease-in-out 0.35s;
+      transform-origin: left;
+      .card-content{
+        opacity:0;
+        transition: opacity ease-in-out 0.35s 0.38s;
+        transform-origin: left;
+      }
       p.card-type {
         font-size: 18px;
         color: $grey;
@@ -251,9 +267,15 @@
     }
 
     .card {
-      display: none;
-
-      .card-content {
+      transform: scaleX(0);
+      transition: transform ease-in-out 0.35s;
+      transform-origin: left;
+      .card-content{
+        opacity:0;
+        transition: opacity ease-in-out 0.35s 0.38s;
+        transform-origin: left;
+      }
+      .card-contents {
         width: 65vw;
       }
 
@@ -289,7 +311,7 @@
   }
 }
 
-div.card {
+div.card, div.card-rd {
   background-color: black;
   position: absolute;
   top: 15vh;
@@ -336,7 +358,7 @@ div.card {
       margin: 30px 30px 0;
     }
 
-    p.card-content {
+    p.card-contents {
       font-family: $content;
       color: $white;
       width: 400px;
@@ -433,4 +455,9 @@ div.testimony-button {
 
 .testimony {
   margin-top: 100px;
+}
+
+.testimony-active{
+  transform:scaleX(1);
+  opacity: 1;
 }
