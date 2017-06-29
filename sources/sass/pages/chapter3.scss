@@ -1,5 +1,116 @@
 .chapter3 {
+  color: #fff;
   .scene1 {
-    background-image: url(../../assets/img/menu_chapter3.jpg); 
+    background-image: url(../../assets/img/menu_chapter3.jpg);
+  }
+  .scene2 {
+      position: relative;
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &--title {
+        display: block;
+        text-align: center;
+        font-family: $title;
+        font-size: 48px;
+      }
+      &--subtitle {
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+        font-family: $content;
+        font-size: 18px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+      }
+      .graph {
+        margin: 0 auto;
+        display: flex;
+        margin-top: 40px;
+        &--img {
+          width: 755px;
+          svg {
+
+          }
+        }
+        &--value {
+          margin-left: 150px;
+          margin-top: 15px;
+          width: 190px;
+          display: block;
+          &--number {
+            font-family: $title;
+            font-size: 36px;
+            color: $red;
+            line-height: 33px;
+            margin-bottom: 16px;
+            &:nth-child(3){
+              margin-top: 75px;
+            }
+          }
+          &--txt {
+            font-family: $content;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  .scene3 {
+    .content {
+      width: 710px;
+      height: 420px;
+      padding: 0 100px;
+      background-color: green;
+      position: absolute;
+      bottom: 160px;
+      right: 260px;
+      &--core {
+        font-family: $content;
+        font-size: 18px;
+      }
+      &--titletop {
+        margin-top: 35px;
+        font-family: $content;
+        font-size: 18px;
+        line-height: 40px;
+      }
+      &--title {
+        font-family: $title;
+        font-size: 36px;
+        color: $red;
+      }
+      &--titlebottom {
+        margin-top: 5px;
+        font-family: $content;
+        font-size: 12px;
+        color: rgba(255,255,255,0.40);
+      }
+      &--txt {
+        margin-top: 30px;
+        font-family: $content;
+        font-size: 18px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+.popup--btn {
+  position: absolute;
+  display: block;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  top: 120px;
+  right: 50px;
+  text-align: center;
+  line-height: 44px;
+  transition-duration: .3s;
+  background-color: #fff;
+  &:hover {
+    transform: scale(1.1);
+    background-color: darken(#fff, 10);
   }
 }
