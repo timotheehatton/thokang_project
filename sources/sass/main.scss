@@ -58,9 +58,9 @@ body {
 }
 
 .scene--introduction {
-  background-position: top center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
   &--center {
     color: $white;
     z-index: 40;
@@ -99,7 +99,7 @@ body {
 }
 
 .overlay {
-  z-index: 100;
+  z-index: -10;
   background-color: $black;
   opacity: 0.7;
   width: 100%;
