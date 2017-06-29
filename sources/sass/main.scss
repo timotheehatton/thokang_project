@@ -34,6 +34,7 @@ body {
   position: relative;
   height: 100%;
   float: left;
+  overflow: hidden;
   &--active {
   }
   font-family: $content;
@@ -113,7 +114,19 @@ body {
   }
 }
 
+
 .scene--active {
+  .enter--animation {
+    animation: draw 4s ease-in-out forwards;
+    @keyframes draw {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
   .svg-animation {
     stroke-dasharray: 1500;
     stroke-dashoffset: 1500;
