@@ -75,7 +75,7 @@
         margin: 30px 30px 0;
       }
 
-      p.card-content {
+      p.card-contents {
         font-family: $content;
         color: $white;
         width: 70vw;
@@ -290,14 +290,10 @@
 
     .player--video--btn {
       display: block;
-      margin: 10px auto;
-    }
-
-    .player--video--title {
-      color: $white;
-      left: 32vw;
-      font-size: 15px;
-      transform: translateX(-50%) translateY(-50%);
+      position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     }
 
     p.content {
@@ -336,6 +332,7 @@ div.card, div.card-rd {
     color: white;
     text-transform: uppercase;
     margin: 30px;
+    display: block;
   }
 
   p.card-subtitle {
