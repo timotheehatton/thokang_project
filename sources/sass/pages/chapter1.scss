@@ -83,6 +83,7 @@
           transform: translateY(25%);
           left: 7%;
           width: 400px;
+          text-shadow: 2px 2px 8px rgba(black, 0.7);
         }
       }
       &--money img,
@@ -101,7 +102,7 @@
       {
         opacity: 0;
         z-index: 18;
-        transition: opacity 0.15s ease-in-out; 
+        transition: opacity 0.15s ease-in-out;
       }
       &--geographic.active-content img,
       &--geographic.active-content p,
@@ -154,7 +155,7 @@
         color: $red;
       }
       &--title:hover {
-        
+
       }
       &--title:hover::after {
         opacity:1;
