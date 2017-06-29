@@ -16,91 +16,62 @@
     background-image: url("../../assets/img/chapter2_slide_4.jpg");
     background-position: center;
     background-size: cover;
-
-    p.title {
-      z-index: 10;
-      position: absolute;
-      text-transform: uppercase;
-      font-family: $title;
-      color: $red;
-      font-size: 50px;
-      text-align: center;
-      top: 30%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-    }
-
-    p.content {
-      position: absolute;
-      z-index: 10;
-      font-family: $content;
-      color: $white;
-      font-size: 16px;
-      text-align: center;
-      width: 60vw;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-    }
-
-    div.testimony-button {
-      position: absolute;
-      top: 32vh;
-      right: 50px;
-      z-index: 100;
-      width:400px;
-      height:80px;
-      cursor: pointer;
-
-      img {
-        width: 65px;
-        height: 65px;
-        border-radius: 100px;
-        border: 5px solid white;
-        z-index: 101;
+  }
+  .scene5{
+    div.container-quotes{
+      width:95vw;
+      height:70vh;
+      margin:20vh auto;
+      position: relative;
+      img{
         position: absolute;
-        right: 0;
-        top: 0;
-        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.20);
+        top:-25%;
+        left:30%;
+        width:500px;
       }
-
-      span {
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 100;
-        background: $white;
-        width: 300px;
-        height: 65px;
-        border-radius: 100px;
-        padding: 5px 30px;
-        opacity: 0;
-        transform-origin: right;
-        margin-right:10px;
-        transform: scaleX(0);
-        transition: all ease-out 0.3s;
-        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.20);
-
-        p:first-child {
-          font-family: $content;
-          font-size: 13px;
-          color: $black;
-        }
-
-        p:last-child {
-          font-family: $title;
-          font-size: 18px;
-          text-transform: uppercase;
-          color: $red;
-        }
+      div.quotes-left{
+        float: left;
+        width:30vw;
       }
-      &:hover span {
-        opacity:1;
-        transform: scaleX(1);
+      div.quotes-right{
+        float:right;
+        width:35vw;
+      }
+      div.clear-both{
+        clear: both;
+      }
+      span.player--video--title{
+        font-family: $title;
+        font-size:20px;
+        color:white;
+        text-transform: uppercase;
+      }
+      p{
+        font-family: $content;
+        font-size:16px;
+        font-style:italic;
+        color:white;
+        margin:15px 0px 100px 0px;
+      }
+      div.quotes-right div.quote:last-child{
+        margin-left: 80px;
       }
     }
-    .second-testimony{
-      margin-top:90px;
+  }
+
+  .scene6 {
+    background-color: #191919;
+    background-image: url("../../assets/img/chapter2_slide_4.jpg");
+    background-position: center;
+    background-size: cover;
+    p.content{
+      margin-top:-50px;
+    }
+
+    @for $i from 1 through 3 {
+      .testimony-#{$i} {
+        margin-top: 80px * $i;
+      }
     }
   }
 }
@@ -159,4 +130,92 @@ div.card {
     top: -30vh;
     width: 500px;
   }
+}
+// testimony
+p.title {
+  z-index: 10;
+  position: absolute;
+  text-transform: uppercase;
+  font-family: $title;
+  color: $red;
+  font-size: 50px;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+p.content {
+  position: absolute;
+  z-index: 10;
+  font-family: $content;
+  color: $white;
+  font-size: 16px;
+  text-align: center;
+  width: 60vw;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+div.testimony-button {
+  position: absolute;
+  top: 32vh;
+  right: 50px;
+  z-index: 100;
+  width: 400px;
+  height: 80px;
+  cursor: pointer;
+
+  img {
+    width: 65px;
+    height: 65px;
+    border-radius: 100px;
+    border: 5px solid white;
+    z-index: 101;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.20);
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background: $white;
+    width: 300px;
+    height: 65px;
+    border-radius: 100px;
+    padding: 5px 30px;
+    opacity: 0;
+    transform-origin: right;
+    margin-right: 10px;
+    transform: scaleX(0);
+    transition: all ease-out 0.3s;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.20);
+
+    p:first-child {
+      font-family: $content;
+      font-size: 13px;
+      color: $black;
+    }
+
+    p:last-child {
+      font-family: $title;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: $red;
+    }
+  }
+
+  &:hover span {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.testimony {
+  margin-top: 100px;
 }
