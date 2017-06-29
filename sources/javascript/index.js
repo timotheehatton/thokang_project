@@ -39,7 +39,7 @@ if (dom.body.querySelector('.scene')) {
       dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)"
       dom.scene[current_scene].classList.add('scene--active')
       dom.timeline_point[current_scene].classList.add('nav--timeline--link--active')
-      dom.timeline_bar.style.transform = 'scaleX(' + (current_scene * dom.scene.length) / 20 + ')'
+      dom.timeline_bar.style.transform = 'scaleX(' + ( 1 / (dom.scene.length-1) ) * current_scene + ')'
     }
     // else {
     //   chapter++
@@ -64,7 +64,7 @@ if (dom.body.querySelector('.scene')) {
       dom.timeline_point[current_scene].classList.remove('nav--timeline--link--active')
       current_scene--
       dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)"
-      dom.timeline_bar.style.transform = 'scaleX(' + (current_scene * dom.scene.length) / 20 + ')'
+      dom.timeline_bar.style.transform = 'scaleX(' + ( 1 / (dom.scene.length-1) ) * current_scene + ')'
     }
   }
 
