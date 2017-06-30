@@ -63,6 +63,24 @@
     background-image: url(../../assets/img/chapter3_scene3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    .card {
+      transform: scaleX(0);
+      transition: transform ease-in-out 0.35s;
+      transform-origin: left;
+
+      .card-content {
+        opacity: 0;
+        transition: opacity ease-in-out 0.35s 0.38s;
+        transform-origin: left;
+      }
+      p.card-contents {
+        font-family: $content;
+        color: $white;
+        width: 70vw;
+        vertical-align: top;
+        margin: 20px 30px;
+      }
+    }
     .content {
       width: 710px;
       height: 420px;
@@ -177,7 +195,7 @@
       height: 100%;
       background-position: center;
       background-size: cover;
-      background-repeat: no-repeat; 
+      background-repeat: no-repeat;
     }
     &--cercle {
       position: absolute;

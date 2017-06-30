@@ -4,6 +4,17 @@
   }
   .scene3 {
     background-image:url(../../assets/img/prison_Quezon.png);
+    .card {
+      transform: scaleX(0);
+      transition: transform ease-in-out 0.35s;
+      transform-origin: left;
+
+      .card-content {
+        opacity: 0;
+        transition: opacity ease-in-out 0.35s 0.38s;
+        transform-origin: left;
+      }
+    }
     .title {
       font-family: Lora-Regular;
       font-size: 18px;
@@ -31,6 +42,11 @@
     .content strong{
       font-size: 22px;
       color: $red;
+    }
+    @for $i from 1 through 3 {
+      .testimony-#{$i} {
+        margin-top: 80px * $i;
+      }
     }
   }
 }

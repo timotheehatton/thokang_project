@@ -1,20 +1,36 @@
-//var dom = {}
-//    dom.body = document.querySelector('.body');
-//
-//if (dom.body.querySelector('.chapter6')) {
-//  dom.map        = dom.body.querySelector('.scene6--background')
-//  dom.cercles  = dom.body.querySelectorAll('.scene6--cercle')
-//  
-////mouse paralax
-//  let paralax = ()=>
-//  {
-//    window.addEventListener('mousemove', (e)=>
-//    {
-//      let ratio_x = (Math.round((e.clientX * 100) / window.innerWidth)) - 50
-//      let ratio_y = (Math.round((e.clientY * 100) / window.innerWidth)) - 50
-//      dom.map.style.transform = 'translate(' + ratio_x * 0.1 + 'px, ' + ratio_y * 0.1 + 'px)'
-//      dom.mcercles.style.transform = 'translate(' + ratio_x * -0.3 + 'px, ' + ratio_y * -0.3 + 'px)'
-//    })
-//  }
-//  paralax()
-//}
+var testimony_buttons = document.querySelectorAll('div.testimony-button'),
+testimony_content = document.querySelectorAll('div.card'),
+testimony_close_btn = document.querySelectorAll('div.card a.close-card'),
+testimony_card_content = document.querySelectorAll('div.card div.card-content'),
+infos_btn = document.querySelectorAll('a.popup--btn'),
+infos_close_btn = document.querySelectorAll('div.more-infos div.more-infos-container a.close-card'),
+infos_container = document.querySelectorAll('div.more-infos'),
+infos_content = document.querySelectorAll('div.more-infos div.more-infos-container');
+
+// testimony buttons
+for (let i= 0; i < testimony_buttons.length; i++) {
+  testimony_buttons[i].addEventListener('click', function(e) {
+    testimony_content[this.dataset.testimony].style.transform = 'scale(1)';
+    testimony_card_content[this.dataset.testimony].style.opacity = '1';
+    e.preventDefault();
+  });
+  testimony_close_btn[i].addEventListener('click', function(e) {
+    testimony_content[this.dataset.testimony].style.transform = 'scale(0)';
+    testimony_card_content[this.dataset.testimony].style.opacity = '0';
+    e.preventDefault();
+  });
+}
+
+//pop-up more infos
+for (let i= 0; i < infos_btn.length; i++) {
+  infos_btn[i].addEventListener('click', function(e) {
+    infos_container[this.dataset.infos].style.transform = 'translateX(0vw)';
+    // testimony_card_content[this.dataset.infos].style.opacity = '1';
+    e.preventDefault();
+  });
+  infos_close_btn[i].addEventListener('click', function(e) {
+    infos_container[this.dataset.infos].style.transform = 'translateX(40vw)';
+    // testimony_card_content[this.dataset.testimony].style.opacity = '0';
+    e.preventDefault();
+  });
+}

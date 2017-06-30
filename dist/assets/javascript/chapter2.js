@@ -9,8 +9,6 @@ infos_close_btn = document.querySelectorAll('div.more-infos div.more-infos-conta
 infos_container = document.querySelectorAll('div.more-infos'),
 infos_content = document.querySelectorAll('div.more-infos div.more-infos-container');
 
-console.log(infos_close_btn);
-
 // slider
 for (var i= 0; i < scene6_title.length; i++) {
   scene6_title[i].addEventListener('mouseover', function(e) {

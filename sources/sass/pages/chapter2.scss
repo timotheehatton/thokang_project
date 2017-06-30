@@ -500,6 +500,7 @@ div.more-infos {
       position: absolute;
       right:40px;
       top:30px;
+      color:$black;
       transition: transform ease 0.3s;
       &:hover{
         transform: rotate(90deg);
@@ -524,7 +525,8 @@ div.more-infos {
     p.infos-subsubtitle {
       font-size: 16px;
       font-family: $content;
-      margin: 20px 0px;
+      margin: 15px 0px;
+      color:$black
     }
 
     div.infos-line {
@@ -537,6 +539,7 @@ div.more-infos {
     p.infos {
       font-size: 14px;
       font-family: $content;
+      color:$black;
     }
   }
 }
