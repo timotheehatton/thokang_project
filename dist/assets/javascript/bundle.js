@@ -47,7 +47,7 @@ if (dom.body.querySelector('.scene')) {
       var file_name = path.substring(path.lastIndexOf("/") + 1);
       var chapter_current = file_name.replace(/[^\d]/g, "");
       chapter_current = parseInt(chapter_current) + 1;
-      if (chapter_current < 4) {
+      if (chapter_current < 5) {
         document.location.href = "http://localhost:3000/chapters/chapter" + chapter_current + ".html";
       }
     }
@@ -142,17 +142,34 @@ if (dom.body.querySelector('.scene')) {
 
 //home page
 if (dom.body.querySelector('.mainHeader')) {
+  dom.main = dom.body.querySelector('.mainHeader');
   dom.main_header = dom.body.querySelector('.mainHeader--content');
   dom.main_header_front = dom.body.querySelector('.mainHeader--content--front');
   dom.main_header_btn = dom.body.querySelector('.mainHeader--content--center--btn a');
+  dom.intro_video = dom.body.querySelector('.intro--video');
+  dom.intro_skip = dom.body.querySelector('.intro--skip');
 
   dom.main_header_btn.addEventListener('mouseenter', function (e) {
     sound('../assets/sounds/gun_reload.mp3', 1);
   });
 
+  dom.intro_skip.addEventListener('click', function (e) {
+    document.location.href = "http://localhost:3000/chapters/chapter1.html";
+  });
+
   dom.main_header_btn.addEventListener('click', function (e) {
+    dom.main.style.opacity = "0";
+    setTimeout(function () {
+      dom.main.style.display = "none";
+    }, 600);
+    dom.intro_video.play();
     sound('../assets/sounds/gun_shot.mp3', 1);
   });
+
+  dom.intro_video.onended = function () {
+    document.location.href = "http://localhost:3000/chapters/chapter1.html";
+  };
+
   //mouse paralax
   var paralax = function paralax() {
     window.addEventListener('mousemove', function (e) {
@@ -171,36 +188,6 @@ function sound(src, volume) {
   sound.autoplay = true;
   sound.volume = volume;
 }
-
-// $(".ajax--btn").mouseover(function(){
-//   sound('../assets/sounds/gun_reload.mp3');
-// });
-// $(".ajax--btn").on("click", function()
-// {
-//   sound('../assets/sounds/gun_shot.mp3');
-// }
-// //ajax transition
-// $(document).ready(function()
-// {
-//   $(".ajax--btn").mouseover(function(){
-//     sound('../assets/sounds/gun_reload.mp3');
-//   });
-//   $(".ajax--btn").on("click", function()
-//   {
-//     sound('../assets/sounds/gun_shot.mp3');
-//     var urlPageName = $(this).attr("href");
-//     $.ajax({
-//         type: "GET",
-//         url: "./" + urlPageName,
-//         processData: false,
-//         crossDomain: true,
-//         cache: true,
-//         success: function (result, responseData) { $("body").html(result); },
-//         error: function (responseData, textStatus, errorThrown) { alert('AJAX failed'); },
-//     });
-//     return false;
-//   });
-// });
 
 },{}]},{},[1])
 
