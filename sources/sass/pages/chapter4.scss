@@ -1,7 +1,7 @@
 .chapter4 {
   .scene1 {
     background-image: url(../../assets/img/chapter4_full.jpg);
-  }  
+  }
   .scene3 {
     background-image:url(../../assets/img/prison_Quezon.png);
     .title {
@@ -18,20 +18,19 @@
       height: 70%;
     }
     .content {
-      width: 920px;
-      font-size: 32px;
-      strong : 72px;
+      width: 70vw;
+      font-size: 18px;
       position: absolute;
-      left: 20%;
-      top: 35%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       color: #FFFFFF;
       text-align: center;
-      font-family: FjallaOne-Regular;
-      line-height: 108px;
+      font-family: $content;
     }
     .content strong{
-      font-size: 72px;
-      color: red;
+      font-size: 22px;
+      color: $red;
     }
   }
 }
