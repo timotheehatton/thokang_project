@@ -7,7 +7,38 @@ testimony_card_content = document.querySelectorAll('div.card div.card-content'),
 infos_btn = document.querySelectorAll('a.popup--btn'),
 infos_close_btn = document.querySelectorAll('div.more-infos div.more-infos-container a.close-card'),
 infos_container = document.querySelectorAll('div.more-infos'),
-infos_content = document.querySelectorAll('div.more-infos div.more-infos-container');
+infos_content = document.querySelectorAll('div.more-infos div.more-infos-container'),
+all_player_buttons = document.querySelectorAll('.player--video--btn'),
+changing_player = document.querySelector('.player--changing'),
+play_svg = document.querySelectorAll('.svg-play'),
+    pause_svg = document.querySelectorAll('.svg-pause'),
+chapter_music = document.querySelector('.chapter--music');
+    
+var player_content = ['../assets/sounds/chapter2_part4_hitler.mp3', '../assets/sounds/chapter2_part4_human.mp3', '../assets/sounds/chapter2_part4_rape.mp3', '../assets/sounds/chapter2_part4_pope.mp3', '../assets/sounds/chapter2_part4_badoy.mp3', '../assets/sounds/chapter2_part4_san_jose.mp3', '../assets/sounds/chapter2_part4_fabiala.mp3', '../assets/sounds/chapter2_part4_querol.mp3'];
+
+//audio testimony
+for (let i= 0; i < all_player_buttons.length; i++) {
+  all_player_buttons[i].addEventListener('click', function(e) {
+    if(changing_player.paused){
+      play_svg[this.dataset.player].style.display='none'; 
+      pause_svg[this.dataset.player].style.display='block'; 
+    } else {
+      play_svg[this.dataset.player].style.display='block'; 
+      pause_svg[this.dataset.player].style.display='none'; 
+    }
+      
+      
+    changing_player.pause();
+    changing_player.setAttribute('src',   player_content[this.dataset.player]);
+    chapter_music.volume = 0.02;
+    changing_player.play();
+    changing_player.onended = function() {
+      chapter_music.volume = 1;
+    }
+    e.preventDefault();
+  });
+}
+
 
 // slider
 for (var i= 0; i < scene6_title.length; i++) {

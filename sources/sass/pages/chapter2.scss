@@ -47,6 +47,14 @@
         top: 90%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
+        svg {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .svg-pause {
+          display: none;
+        }
       }
     }
   }
@@ -205,12 +213,26 @@
   }
 
   .scene5 {
+    background-image: url(../../assets/img/chap2_part4_fond.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    &--overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $black;
+      opacity: 0.9;
+      z-index: 2;
+    }
     img {
       position: absolute;
       right: 30%;
       bottom: 60px;
       width: 500px;
-      z-index: 110;
+      z-index: 10;
+      opacity: 0.78;
     }
 
     div.container-quotes {
@@ -218,6 +240,7 @@
       height: 70vh;
       margin: 20vh auto;
       position: relative;
+      z-index: 20;
 
       img {
         position: absolute;
@@ -251,7 +274,7 @@
         font-family: $content;
         font-size: 16px;
         font-style: italic;
-        color: white;
+        color: $transparent-white;
         margin: 15px 0 100px;
       }
 
@@ -305,6 +328,10 @@
       top: 80%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
+      transition: all 0.3s cubic-bezier(.43,-0.83,.53,1.73);
+    }
+    .player--video--btn:hover {
+      transform: scale(1.2);
     }
 
     p.content {
@@ -542,4 +569,21 @@ div.more-infos {
       color:$black;
     }
   }
+}
+.player--video--btn {
+  position: relative;
+  transition: all 0.3s cubic-bezier(.43,-0.83,.53,1.73);
+}
+.player--video--btn:hover {
+  transform: scale(1.2);
+}
+svg.svg-pause,
+svg.svg-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.svg-pause {
+  display: none;
 }
