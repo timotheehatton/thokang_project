@@ -44,19 +44,15 @@ if (dom.body.querySelector('.scene')) {
       dom.timeline_point[current_scene].classList.add('nav--timeline--link--active')
       dom.timeline_bar.style.transform = 'scaleX(' + ( 1 / (dom.scene.length-1) ) * current_scene + ')'
     }
-    // else {
-    //   chapter++
-    //   current_scene = 0
-    //   $.ajax({
-    //       type: "GET",
-    //       url: "./chapters/chapter" + chapter + ".html",
-    //       processData: false,
-    //       crossDomain: true,
-    //       cache: true,
-    //       success: function (result, responseData) { $("body").html(result); },
-    //       error: function (responseData, textStatus, errorThrown) { alert('AJAX failed'); },
-    //   });
-    // }
+    else {
+      var path = document.location.href
+      var file_name = path.substring(path.lastIndexOf( "/" ) + 1 );
+      var chapter_current = file_name.replace(/[^\d]/g, "");
+      chapter_current = parseInt(chapter_current)+1;
+      if (chapter_current < 4) {
+        document.location.href = "http://localhost:3000/chapters/chapter" + chapter_current + ".html"
+      }
+    }
   }
 
   //previous scene function
@@ -70,6 +66,15 @@ if (dom.body.querySelector('.scene')) {
       dom.scene[current_scene].classList.add('scene--active')
       dom.chapter.style.transform = "translateX(" + -current_scene * window.innerWidth + "px)"
       dom.timeline_bar.style.transform = 'scaleX(' + ( 1 / (dom.scene.length-1) ) * current_scene + ')'
+    }
+    else {
+      var path = document.location.href
+      var file_name = path.substring(path.lastIndexOf( "/" ) + 1 );
+      var chapter_current = file_name.replace(/[^\d]/g, "");
+      chapter_current = parseInt(chapter_current)-1;
+      if (chapter_current < 4) {
+        document.location.href = "http://localhost:3000/chapters/chapter" + chapter_current + ".html"
+      }
     }
   }
 
