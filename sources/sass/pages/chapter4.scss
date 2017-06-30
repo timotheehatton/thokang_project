@@ -38,9 +38,11 @@
       color: #FFFFFF;
       text-align: center;
       font-family: $content;
+      line-height: 2;
     }
-    .content strong{
+    .content strong {
       font-size: 22px;
+      font-family: $title;
       color: $red;
     }
     @for $i from 1 through 3 {
