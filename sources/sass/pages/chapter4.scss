@@ -3,10 +3,12 @@
     color:$white;
   }
   .scene1 {
-    background-image: url(../../assets/img/chapter4_full.jpg);
+    background-image: url("../../assets/img/chapter4_full.jpg");
   }
+
   .scene3 {
-    background-image:url(../../assets/img/prison_Quezon.png);
+    background-image: url("../../assets/img/prison_Quezon.png");
+
     .card {
       transform: scaleX(0);
       transition: transform ease-in-out 0.35s;
@@ -18,6 +20,7 @@
         transform-origin: left;
       }
     }
+
     .title {
       font-family: Lora-Regular;
       font-size: 18px;
@@ -31,6 +34,7 @@
       transform: translate(-50%, 0%);
       height: 70%;
     }
+
     .content {
       width: 70vw;
       font-size: 18px;
@@ -43,6 +47,7 @@
       font-family: $content;
       line-height: 2;
     }
+
     .content strong {
       font-size: 22px;
       font-family: $title;
@@ -51,6 +56,48 @@
     @for $i from 1 through 3 {
       .testimony-#{$i} {
         margin-top: 80px * $i;
+      }
+    }
+  }
+
+  .scene4 {
+    div.see-again-button {
+      a {
+        position: absolute;
+        bottom : 15%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        margin-top: 180px;
+        padding: 15px 40px;
+        border-radius: 4px;
+        color: #fff;
+        background: #FE002A;
+        text-transform: uppercase;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 8px 1px #FE002A;
+        font-family: "Fjalla One", sans-serif;
+        &:hover{
+          background: #df0025;
+        }
+      }
+    }
+
+    p.title {
+      position: absolute;
+      text-transform: uppercase;
+      width: 50vw;
+      color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: $title;
+      font-size: 30px;
+      line-height: 40px;
+
+      strong {
+        color: $red;
       }
     }
   }
