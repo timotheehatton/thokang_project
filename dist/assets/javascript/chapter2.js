@@ -8,13 +8,44 @@ infos_btn = document.querySelectorAll('a.popup--btn'),
 infos_close_btn = document.querySelectorAll('div.more-infos div.more-infos-container a.close-card'),
 infos_container = document.querySelectorAll('div.more-infos'),
 infos_content = document.querySelectorAll('div.more-infos div.more-infos-container'),
-all_player_buttons = document.querySelectorAll('.player--video--btn'),
+all_player_buttons = document.querySelectorAll('.sounds-btn'),
 changing_player = document.querySelector('.player--changing'),
 play_svg = document.querySelectorAll('.svg-play'),
-    pause_svg = document.querySelectorAll('.svg-pause'),
-chapter_music = document.querySelector('.chapter--music');
+pause_svg = document.querySelectorAll('.svg-pause'),
+chapter_music = document.querySelector('.chapter--music'),
+    //video player
+    videos_buttons = document.querySelectorAll('.videos-btn'),
+    chapter_videos = document.querySelectorAll('.video-chapter'),
+    video_play_svg = document.querySelectorAll('.videos-btn .svg-play'),
+  video_pause_svg = document.querySelectorAll('.videos-btn .svg-pause');
     
+
+console.log(videos_buttons);
+console.log(chapter_videos);
+console.log(video_play_svg);
+console.log(video_pause_svg);
 var player_content = ['../assets/sounds/chapter2_part4_hitler.mp3', '../assets/sounds/chapter2_part4_human.mp3', '../assets/sounds/chapter2_part4_rape.mp3', '../assets/sounds/chapter2_part4_pope.mp3', '../assets/sounds/chapter2_part4_badoy.mp3', '../assets/sounds/chapter2_part4_san_jose.mp3', '../assets/sounds/chapter2_part4_fabiala.mp3', '../assets/sounds/chapter2_part4_querol.mp3'];
+
+// video
+for (let i= 0; i < videos_buttons.length; i++) {
+  videos_buttons[i].addEventListener('click', function(e) {
+    
+    if(chapter_videos[this.dataset.videos].paused){
+      video_play_svg[this.dataset.videos].style.display='none'; 
+      video_pause_svg[this.dataset.videos].style.display='block'; 
+      chapter_videos[this.dataset.videos].play();
+      chapter_music.volume = 0.02;
+    } else {
+      chapter_videos[this.dataset.videos].pause();
+      video_play_svg[this.dataset.videos].style.display='block'; 
+      video_pause_svg[this.dataset.videos].style.display='none'; 
+      chapter_music.volume = 1;
+    }
+    
+    e.preventDefault();
+  });
+}
+
 
 //audio testimony
 for (let i= 0; i < all_player_buttons.length; i++) {

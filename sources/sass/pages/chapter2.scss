@@ -1,4 +1,7 @@
 .chapter2 {
+  .player--video--title{
+    color:$white;
+  }
   .scene1 {
     background-image: url("../../assets/img/chapter2_full.jpg");
   }
@@ -47,14 +50,6 @@
         top: 90%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        svg {
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-        .svg-pause {
-          display: none;
-        }
       }
     }
   }
@@ -328,10 +323,6 @@
       top: 80%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
-      transition: all 0.3s cubic-bezier(.43,-0.83,.53,1.73);
-    }
-    .player--video--btn:hover {
-      transform: scale(1.2);
     }
 
     p.content {
@@ -586,4 +577,11 @@ svg.svg-play {
 }
 .svg-pause {
   display: none;
+}
+
+.player--video--btn {
+  transition: all 0.3s cubic-bezier(.43,-0.83,.53,1.73);
+}
+.player--video--btn:hover {
+  transform: scale(1.2);
 }
