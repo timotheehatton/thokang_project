@@ -19,15 +19,14 @@ body {
   position: fixed;
   height: 100%;
   width: 100%;
-  background: black;
+  background: #000;
 }
 
 .chapter {
   position: relative;
   height: 100%;
-  transition-duration: .5s;
   transition-property: transform;
-  will-change: translate;
+  will-change: transform;
 }
 
 .scene {
@@ -35,7 +34,15 @@ body {
   height: 100%;
   float: left;
   overflow: hidden;
+  opacity: 0;
+  transition-duration: 2s;
+  transition-delay: 1s;
+  transition-property: opacity;
+  will-change: opacity;
   &--active {
+    transition-delay: 0s;
+    opacity: 1;
+    will-change: opacity;
   }
   font-family: $content;
   font-weight: 400;
@@ -181,6 +188,6 @@ body {
 }
 
 .slide-hover:hover::after{
-  transform-origin: top left; 
+  transform-origin: top left;
   transform: scaleX(1);
 }

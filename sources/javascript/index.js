@@ -72,7 +72,7 @@ if (dom.body.querySelector('.scene')) {
       var file_name = path.substring(path.lastIndexOf( "/" ) + 1 );
       var chapter_current = file_name.replace(/[^\d]/g, "");
       chapter_current = parseInt(chapter_current)-1;
-      if (chapter_current < 4) {
+      if (chapter_current > 0) {
         document.location.href = "http://localhost:3000/chapters/chapter" + chapter_current + ".html"
       }
     }
