@@ -1,6 +1,46 @@
 .chapter1 {
   .scene1 {
     background-image: url(../../assets/img/chapter1_full.jpg);
+    .scroll--invitation {
+      color: #fff;
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      z-index: 1000;
+      text-align: center;
+      transform: translateX(-50%);
+      opacity: .7;
+      &::after {
+        margin-top: 5px;
+        content: '';
+        display: block;
+        width: 2px;
+        height: 50px;
+        position: relative;
+        left: 20px;
+        background-color: #fff;
+        animation: loop 1.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+          transform-origin: bottom;
+        @keyframes loop {
+          0% {
+              transform-origin: bottom;
+              transform: scaleY(0);
+          }
+          50% {
+              transform-origin: bottom;
+              transform: scaleY(1);
+          }
+          51% {
+              transform-origin: top;
+              transform: scaleY(1);
+          }
+          100% {
+              transform-origin: top;
+              transform: scaleY(0);
+          }
+        }
+      }
+    }
   }
   .scene2 {
     background-color: #191919;

@@ -200,3 +200,55 @@ function sound(src, volume){
   sound.autoplay = true;
   sound.volume = volume;
 }
+
+//lethargy scroll
+function addEvent(el, eventType, handler)
+{
+	if (el.addEventListener)
+  {
+		el.addEventListener(eventType, handler, false);
+	}
+  else if (el.attachEvent)
+  {
+		el.attachEvent('on' + eventType, handler);
+	}
+  else
+  {
+		el['on' + eventType] = handler;
+	}
+};
+
+(function()
+{
+	var lethargy = new Lethargy();
+
+  var scrolling = true
+	var checkScroll = function (e)
+  {
+    if (scrolling === true) {
+      scrolling = false
+      e.preventDefault()
+  		e.stopPropagation();
+
+      var result = lethargy.check(e);
+      if(result == -1)
+      {
+  			next_scene()
+  		}
+      else if (result == 1)
+      {
+        previous_scene()
+      }
+      setTimeout(function ()
+      {
+        scrolling = true
+      }, 1500)
+    }
+	};
+
+	// Cross-browser way to bind to mouse events
+	addEvent(window, 'mousewheel', checkScroll);
+	addEvent(window, 'DOMMouseScroll', checkScroll);
+	addEvent(window, 'wheel', checkScroll);
+	addEvent(window, 'MozMousePixelScroll', checkScroll);
+})();
