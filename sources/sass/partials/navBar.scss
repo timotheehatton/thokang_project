@@ -88,6 +88,36 @@
       transition-duration: .3s;
       transition-property: background, border;
       position: relative;
+      &:nth-child(2){
+        .nav--timeline--link--txt {
+          transition-delay: .1s;
+        }
+      }
+      &:nth-child(3){
+        .nav--timeline--link--txt {
+          transition-delay: .2s;
+        }
+      }
+      &:nth-child(4){
+        .nav--timeline--link--txt {
+          transition-delay: .3s;
+        }
+      }
+      &:nth-child(5){
+        .nav--timeline--link--txt {
+          transition-delay: .4s;
+        }
+      }
+      &:nth-child(6){
+        .nav--timeline--link--txt {
+          transition-delay: .5s;
+        }
+      }
+      &:nth-child(7){
+        .nav--timeline--link--txt {
+          transition-delay: .6s;
+        }
+      }
       &::after {
         content: '';
         position: absolute;
@@ -111,7 +141,7 @@
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
-        transition-duration: .3s;
+        transition-duration: .5s;
         transition-property: opacity;
       }
       &--active {
@@ -153,6 +183,31 @@
     @keyframes rotate {
       to {
        stroke-dashoffset: 300;
+      }
+    }
+    &--icon {
+      .bar {
+          animation-name: sound_move;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+          animation-duration: 0.4s;
+          transform-origin: bottom;
+      }
+      &--pause .bar {
+          animation-play-state: paused;
+          transform: scaleY(0.1);
+      }
+      .bar-1 { animation-delay: 0.1s; }
+      .bar-2 { animation-delay: 0.5s; }
+      .bar-3 { animation-delay: 0.65s; }
+      .bar-4 { animation-delay: 0.35s; }
+      @keyframes sound_move {
+        0% {
+            transform: scaleY(1);
+        }
+        100% {
+            transform: scaleY(0.4);
+        }
       }
     }
   }
