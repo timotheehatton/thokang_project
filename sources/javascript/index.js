@@ -11,7 +11,7 @@ if (dom.body.querySelector('.scene')) {
   dom.btn_menu_close      = dom.body.querySelector('.popin--close')
   dom.menu_popin          = dom.body.querySelector('.popin')
   dom.menu_sound          = dom.body.querySelector('.nav--sound')
-  dom.audio               = dom.body.querySelector('audio')
+  dom.audio               = dom.body.querySelector('.main-audio')
 
   //slider dimensions
   var width_slider = ()=>

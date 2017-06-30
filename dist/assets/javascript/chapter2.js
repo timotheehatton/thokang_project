@@ -10,8 +10,8 @@ infos_container = document.querySelectorAll('div.more-infos'),
 infos_content = document.querySelectorAll('div.more-infos div.more-infos-container'),
 all_player_buttons = document.querySelectorAll('.sounds-btn'),
 changing_player = document.querySelector('.player--changing'),
-play_svg = document.querySelectorAll('.svg-play'),
-pause_svg = document.querySelectorAll('.svg-pause'),
+play_svg = document.querySelectorAll('.sounds-btn .svg-play'),
+pause_svg = document.querySelectorAll('.sounds-btn .svg-pause'),
 chapter_music = document.querySelector('.chapter--music'),
     //video player
     videos_buttons = document.querySelectorAll('.videos-btn'),
@@ -46,26 +46,26 @@ for (let i= 0; i < videos_buttons.length; i++) {
   });
 }
 
-
 //audio testimony
 for (let i= 0; i < all_player_buttons.length; i++) {
   all_player_buttons[i].addEventListener('click', function(e) {
     if(changing_player.paused){
       play_svg[this.dataset.player].style.display='none'; 
       pause_svg[this.dataset.player].style.display='block'; 
+      changing_player.pause();
+      changing_player.setAttribute('src',   player_content[this.dataset.player]);
+      chapter_music.volume = 0.02;
+      changing_player.play();
+      changing_player.onended = function() {
+        chapter_music.volume = 1;
+      }
+      
     } else {
       play_svg[this.dataset.player].style.display='block'; 
       pause_svg[this.dataset.player].style.display='none'; 
+      changing_player.pause();
     }
-      
-      
-    changing_player.pause();
-    changing_player.setAttribute('src',   player_content[this.dataset.player]);
-    chapter_music.volume = 0.02;
-    changing_player.play();
-    changing_player.onended = function() {
-      chapter_music.volume = 1;
-    }
+  
     e.preventDefault();
   });
 }
