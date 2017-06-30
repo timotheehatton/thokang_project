@@ -11,6 +11,7 @@ if (dom.body.querySelector('.scene')) {
   dom.btn_menu_close      = dom.body.querySelector('.popin--close')
   dom.menu_popin          = dom.body.querySelector('.popin')
   dom.menu_sound          = dom.body.querySelector('.nav--sound')
+  dom.audio               = dom.body.querySelector('audio')
 
   //slider dimensions
   var width_slider = ()=>
@@ -49,7 +50,7 @@ if (dom.body.querySelector('.scene')) {
       var file_name = path.substring(path.lastIndexOf( "/" ) + 1 );
       var chapter_current = file_name.replace(/[^\d]/g, "");
       chapter_current = parseInt(chapter_current)+1;
-      if (chapter_current < 4) {
+      if (chapter_current < 5) {
         document.location.href = "http://localhost:3000/chapters/chapter" + chapter_current + ".html"
       }
     }
@@ -123,6 +124,17 @@ if (dom.body.querySelector('.scene')) {
   {
     sound('../assets/sounds/sound_button.mp3', 0.1)
   })
+  dom.menu_sound.addEventListener('click', (e)=>
+  {
+    if (dom.audio.muted) {
+      dom.menu_sound.classList.remove('nav--sound--icon--pause')
+      dom.audio.muted = false;
+    }
+    else {
+      dom.menu_sound.classList.add('nav--sound--icon--pause')
+      dom.audio.muted = true;
+    }
+  })
 
   //chapter menu sound('../assets/sounds/sound_scroll.mp3', 0.1)
   dom.btn_menu.addEventListener('click', (e)=>
@@ -144,24 +156,92 @@ if (dom.body.querySelector('.scene')) {
     e.preventDefault();
   })
 
-  //scroll control Lethargy
+  //lethargy scroll
+  function addEvent(el, eventType, handler)
+  {
+  	if (el.addEventListener)
+    {
+  		el.addEventListener(eventType, handler, false);
+  	}
+    else if (el.attachEvent)
+    {
+  		el.attachEvent('on' + eventType, handler);
+  	}
+    else
+    {
+  		el['on' + eventType] = handler;
+  	}
+  };
+
+  (function()
+  {
+  	var lethargy = new Lethargy();
+
+    var scrolling = true
+  	var checkScroll = function (e)
+    {
+      if (scrolling === true) {
+        scrolling = false
+        e.preventDefault()
+    		e.stopPropagation();
+
+        var result = lethargy.check(e);
+        if(result == -1)
+        {
+    			next_scene()
+    		}
+        else if (result == 1)
+        {
+          previous_scene()
+        }
+        setTimeout(function ()
+        {
+          scrolling = true
+        }, 1500)
+      }
+  	};
+
+  	// Cross-browser way to bind to mouse events
+  	addEvent(window, 'mousewheel', checkScroll);
+  	addEvent(window, 'DOMMouseScroll', checkScroll);
+  	addEvent(window, 'wheel', checkScroll);
+  	addEvent(window, 'MozMousePixelScroll', checkScroll);
+  })();
 }
 
 //home page
 if (dom.body.querySelector('.mainHeader')) {
+  dom.main               =  dom.body.querySelector('.mainHeader')
   dom.main_header        = dom.body.querySelector('.mainHeader--content')
   dom.main_header_front  = dom.body.querySelector('.mainHeader--content--front')
   dom.main_header_btn    = dom.body.querySelector('.mainHeader--content--center--btn a')
+  dom.intro_video        = dom.body.querySelector('.intro--video')
+  dom.intro_skip         = dom.body.querySelector('.intro--skip')
 
   dom.main_header_btn.addEventListener('mouseenter', (e)=>
   {
     sound('../assets/sounds/gun_reload.mp3', 1)
   })
 
+  dom.intro_skip.addEventListener('click', (e)=>
+  {
+    document.location.href = "http://localhost:3000/chapters/chapter1.html"
+  })
+
   dom.main_header_btn.addEventListener('click', (e)=>
   {
+    dom.main.style.opacity = "0"
+    setTimeout(function(){
+      dom.main.style.display = "none"
+    }, 600)
+    dom.intro_video.play()
     sound('../assets/sounds/gun_shot.mp3', 1)
   })
+
+  dom.intro_video.onended = function() {
+    document.location.href = "http://localhost:3000/chapters/chapter1.html"
+  }
+
   //mouse paralax
   let paralax = ()=>
   {
@@ -182,33 +262,3 @@ function sound(src, volume){
   sound.autoplay = true;
   sound.volume = volume;
 }
-
-// $(".ajax--btn").mouseover(function(){
-//   sound('../assets/sounds/gun_reload.mp3');
-// });
-// $(".ajax--btn").on("click", function()
-// {
-//   sound('../assets/sounds/gun_shot.mp3');
-// }
-// //ajax transition
-// $(document).ready(function()
-// {
-//   $(".ajax--btn").mouseover(function(){
-//     sound('../assets/sounds/gun_reload.mp3');
-//   });
-//   $(".ajax--btn").on("click", function()
-//   {
-//     sound('../assets/sounds/gun_shot.mp3');
-//     var urlPageName = $(this).attr("href");
-//     $.ajax({
-//         type: "GET",
-//         url: "./" + urlPageName,
-//         processData: false,
-//         crossDomain: true,
-//         cache: true,
-//         success: function (result, responseData) { $("body").html(result); },
-//         error: function (responseData, textStatus, errorThrown) { alert('AJAX failed'); },
-//     });
-//     return false;
-//   });
-// });
